@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity{
                         VKParameters parameters = new VKParameters();
                         parameters.put("start_from", form );
                         parameters.put("filters", "post");
-                        parameters.put("count", 2);
+                        parameters.put("count", 25);
                         parameters.put("fields", "name,first_name,last_name");
 
                         VKRequest request = new VKRequest("newsfeed.get", parameters);
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onResult(VKAccessToken res) {
 
-                VKRequest request = new VKRequest("newsfeed.get", VKParameters.from(VKApiConst.FILTERS, "post", VKApiConst.COUNT, "2", VKApiConst.FIELDS, "name,first_name,last_name"));
+                VKRequest request = new VKRequest("newsfeed.get", VKParameters.from(VKApiConst.FILTERS, "post", VKApiConst.COUNT, "25", VKApiConst.FIELDS, "name,first_name,last_name"));
                 request.executeWithListener(new VKRequest.VKRequestListener() {
                     @Override
                     public void onComplete(VKResponse response) {
